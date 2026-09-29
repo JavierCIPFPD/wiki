@@ -1,0 +1,26 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editores y herramientas locales
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporales y copias de seguridad
+*.tmp
+*.bak
+*.orig
+*.log
+
+# Configuración local que no debe publicarse
+*.local
+*.local.env
+local.env
+.env
+.env.*
+!.env.example
+
+# El proyecto usa dependencias versionadas en vendor/; no ignorarlas.

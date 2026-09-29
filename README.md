@@ -2,6 +2,10 @@
 
 Wiki pública y estática. La interfaz se sirve como HTML, CSS y JavaScript; las páginas se leen desde la carpeta `hilos/` del repositorio público configurado.
 
+Sitio publicado: https://javiercipfpd.github.io/wiki/
+
+Para retomar el proyecto, consulta [CONTINUAR.md](CONTINUAR.md). La licencia del proyecto es MIT y está disponible en [LICENSE](LICENSE).
+
 ## Configuración
 
 Edita `wiki.env` antes de publicar:
