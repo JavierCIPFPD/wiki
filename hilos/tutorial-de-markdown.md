@@ -198,6 +198,26 @@ https://example.com/videos/presentacion.mp4
 https://example.com/videos/animacion.webm
 ```
 
+### Ejemplos de vídeos
+
+Estos enlaces son ejemplos reales y se convierten automáticamente en reproductores al abrir la página:
+
+**YouTube**
+
+https://www.youtube.com/watch?v=aqz-KE-bpKQ
+
+**Vimeo**
+
+https://vimeo.com/76979871
+
+**MP4**
+
+https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4
+
+**WebM**
+
+https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm
+
 Usa vídeos públicos y estables. La carga del reproductor depende del servicio externo y de la conexión de cada persona.
 
 ## Lo que no se interpreta
