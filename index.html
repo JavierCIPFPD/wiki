@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f3ed">
+  <meta name="description" content="Wiki pública del proyecto de innovación Moncalvillo">
+  <title>Moncalvillo | Wiki</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="vendor/markdown-it.min.js"></script>
+  <script defer src="vendor/purify.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/inicio.md" aria-label="Ir a la portada">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-name" id="site-name">Moncalvillo</span>
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-section">Wiki de proyecto</span>
+    </a>
+    <button class="mobile-index-button" id="mobile-index-button" type="button" aria-expanded="false" aria-controls="sidebar">Índice</button>
+    <div class="topbar-meta" id="site-description">Avances e ideas</div>
+  </header>
+  <div class="workspace">
+    <aside class="sidebar" id="sidebar" aria-label="Índice de páginas">
+      <div class="sidebar-heading">
+        <h2>Páginas</h2>
+        <span class="page-count" id="page-count" aria-label="Número de páginas">0</span>
+      </div>
+      <label class="search-box" for="page-search">
+        <span class="search-glyph" aria-hidden="true">⌕</span>
+        <input id="page-search" type="search" placeholder="Buscar en la wiki" autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+      <p class="search-hint" id="search-hint">Busca títulos y contenido</p>
+      <nav class="page-list" id="page-list" aria-label="Páginas de la wiki"></nav>
+      <div class="sidebar-footer">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="sync-status" role="status" aria-live="polite">Conectando con GitHub</span>
+      </div>
+    </aside>
+    <main class="main-content" id="main-content">
+      <div class="reading-column">
+        <div class="page-toolbar">
+          <div class="breadcrumb" id="breadcrumb">Wiki <span aria-hidden="true">/</span> Portada</div>
+          <div class="page-navigation" aria-label="Navegación entre páginas">
+            <button class="nav-button" id="previous-page" type="button" aria-label="Página anterior" disabled>Anterior</button>
+            <button class="nav-button" id="next-page" type="button" aria-label="Página siguiente" disabled>Siguiente</button>
+          </div>
+        </div>
+        <article class="article" id="article" aria-live="polite" aria-busy="true">
+          <div class="loading-state"><span class="loading-line" aria-hidden="true"></span><p id="loading-message">Leyendo las páginas de la wiki...</p></div>
+        </article>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
