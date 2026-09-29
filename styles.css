@@ -63,7 +63,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, pre:focus-visible { 
 .search-box kbd { display: grid; width: 19px; height: 20px; flex: 0 0 auto; place-items: center; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: 'DM Mono', monospace; font-size: 10px; }
 .search-hint { margin: 8px 5px 21px; color: var(--muted); font-size: 10px; }
 .page-list { display: flex; flex: 1; flex-direction: column; align-items: stretch; gap: 3px; overflow-y: auto; }
-.page-link { position: relative; display: block; padding: 9px 10px 9px 13px; border-radius: 2px; color: #4c5750; font-size: 12px; line-height: 1.4; text-decoration: none; transition: background-color 150ms ease, color 150ms ease; }
+.page-link { position: relative; display: block; padding: 9px 10px 9px 13px; border-radius: 2px; color: #4c5750; font-size: 12px; line-height: 1.4; text-decoration: none; text-transform: none; transition: background-color 150ms ease, color 150ms ease; }
 .page-link:hover { color: var(--ink); background: #ffffff8a; }
 .page-link.is-active { color: var(--accent); background: #ffffffb8; font-weight: 700; }
 .page-link.is-active::before { position: absolute; inset: 7px auto 7px 0; width: 2px; background: var(--accent); content: ''; }
