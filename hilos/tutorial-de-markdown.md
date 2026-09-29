@@ -202,6 +202,25 @@ https://example.com/videos/animacion.webm
 
 Estos enlaces son ejemplos reales y se convierten automáticamente en reproductores al abrir la página:
 
+En la previsualización final no se muestra la URL como un enlace normal:
+
+- **YouTube y Vimeo** aparecen en un reproductor incrustado panorámico, con imagen de portada y botón de reproducción.
+- **MP4 y WebM** aparecen en un reproductor HTML5 con botón de reproducción, barra de progreso, volumen y pantalla completa.
+- El reproductor se adapta al ancho de la columna de lectura y mantiene la proporción del vídeo en móvil y escritorio.
+
+El resultado se parece a esto conceptualmente:
+
+```text
++--------------------------------------------------+
+|                                                  |
+|              Previsualización del vídeo         |
+|                                                  |
+|  ▶                 ━━━━━━━━━━━━━━━  🔊  ⛶       |
++--------------------------------------------------+
+```
+
+Pulsa el botón de reproducción para comprobar el vídeo directamente en la página.
+
 **YouTube**
 
 https://www.youtube.com/watch?v=aqz-KE-bpKQ
