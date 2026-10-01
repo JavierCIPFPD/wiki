@@ -11,6 +11,7 @@
     searchHint: document.getElementById('search-hint'),
     status: document.getElementById('sync-status'),
     siteName: document.getElementById('site-name'),
+    brand: document.querySelector('.brand'),
     previous: document.getElementById('previous-page'),
     next: document.getElementById('next-page'),
     mobileIndex: document.getElementById('mobile-index-button'),
@@ -109,7 +110,7 @@
   }
 
   async function listPages(repository) {
-    const response = await fetch(repository.api, { headers: { Accept: 'application/vnd.github+json' } });
+    const response = await fetch(repository.api, { cache: 'no-store', headers: { Accept: 'application/vnd.github+json' } });
     if (!response.ok) {
       if (response.status === 404) throw new Error('No se encontró la carpeta de páginas. Comprueba repositorio, rama y ruta.');
       if (response.status === 403) throw new Error('GitHub ha limitado temporalmente las consultas. Vuelve a cargar la página más tarde.');
@@ -408,6 +409,11 @@
 
   elements.previous.addEventListener('click', function () { navigateTo(-1); });
   elements.next.addEventListener('click', function () { navigateTo(1); });
+  elements.brand.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.hash = '#/inicio.md';
+    window.location.reload();
+  });
   elements.mobileIndex.addEventListener('click', function () {
     const open = elements.sidebar.classList.toggle('is-open');
     elements.mobileIndex.setAttribute('aria-expanded', String(open));
