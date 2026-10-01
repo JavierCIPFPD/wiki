@@ -211,7 +211,7 @@ La [documentación oficial de llama.cpp](https://github.com/ggml-org/llama.cpp) 
 
 | Síntoma | Qué revisar |
 | --- | --- |
-| PowerShell no reconoce el ejecutable | Sitúate en la carpeta extraída y ejecuta con el prefijo `.[0m`, por ejemplo `.[0mllama.exe`. Comprueba el nombre exacto con `Get-ChildItem`. |
+| PowerShell no reconoce el ejecutable | Sitúate en la carpeta extraída y ejecútalo mediante una ruta relativa de PowerShell. Comprueba el nombre exacto con `Get-ChildItem`. |
 | `-ngl` no acelera | Verifica que descargaste/compilaste el backend correcto y que el controlador está actualizado. Busca mensajes de offload al cargar. |
 | Error de falta de memoria | Prueba un modelo/cuántización menor, menos capas GPU o un contexto menor. Cierra otros procesos pesados. |
 | No se descarga desde Hugging Face | Revisa Internet, el identificador exacto del repositorio y si el modelo exige aceptar una licencia o autenticarse. |
