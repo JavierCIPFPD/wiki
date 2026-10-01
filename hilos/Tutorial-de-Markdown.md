@@ -48,10 +48,10 @@ Resultado: [Volver a la portada](inicio.md).
 Los enlaces a otras páginas de esta wiki se convierten en navegación interna:
 
 ```markdown
-[Volver a la portada](Modelos-IA-local.md)
+[Modelos IA local](Modelos-IA-local.md)
 ```
 
-Resultado: [Volver a la portada](Modelos-IA-local.md).
+Resultado: [Modelos IA local](Modelos-IA-local.md).
 
 Los enlaces web se abren en una pestaña nueva. Por seguridad, la wiki admite enlaces e imágenes externas mediante HTTPS.
 
