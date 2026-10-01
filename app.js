@@ -183,6 +183,30 @@
     return wrapper.outerHTML;
   }
 
+  function internalPageName(href) {
+    let value = href.trim();
+    if (!value || value.charAt(0) === '#') return null;
+    if (/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(value)) {
+      let linkedHost;
+      try { linkedHost = new URL(value).hostname; } catch (error) { return null; }
+      if (!/^[^./]+\.(?:md|markdown)$/i.test(linkedHost)) return null;
+      value = linkedHost;
+    }
+
+    let path = value.split(/[?#]/, 1)[0].replace(/\\/g, '/');
+    path = path.slice(path.lastIndexOf('/') + 1);
+    let filename;
+    try { filename = decodeURIComponent(path); } catch (error) { return null; }
+    if (!/\.(?:md|markdown)$/i.test(filename)) return null;
+    if (/^inicio\.(?:md|markdown)$/i.test(filename)) return 'inicio.md';
+
+    const normalizedTitle = pageTitle(filename).toLocaleLowerCase('es');
+    const page = state.pages.find(function (item) {
+      return item.name.toLowerCase() === filename.toLowerCase() || pageTitle(item.name).toLocaleLowerCase('es') === normalizedTitle;
+    });
+    return page ? page.name : null;
+  }
+
   function addMediaPlayers(html) {
     const holder = document.createElement('div');
     holder.innerHTML = html;
@@ -196,15 +220,10 @@
     holder.querySelectorAll('a[href]').forEach(function (link) {
       const href = link.getAttribute('href');
       if (!href) return;
-      const internal = href.match(/^(?:\.\/)?(?:hilos\/)?([^/?#]+\.(?:md|markdown))$/i);
-      if (internal) {
-        let filename;
-        try { filename = decodeURIComponent(internal[1]); } catch (error) { return; }
-        const page = state.pages.find(function (item) { return item.name.toLowerCase() === filename.toLowerCase(); });
-        if (page) {
-          link.href = '#/' + encodeURIComponent(page.name);
-          return;
-        }
+      const filename = internalPageName(href);
+      if (filename) {
+        link.href = '#/' + encodeURIComponent(filename);
+        return;
       }
       let parsed;
       try { parsed = new URL(href, window.location.href); } catch (error) { return; }
